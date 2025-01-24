@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,7 +44,9 @@ ROOT_URLCONF = 'plagiarism_checker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'codes/templates'],
+        'DIRS': [
+            BASE_DIR / 'codes/templates',  # Добавьте этот путь
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -60,6 +61,8 @@ TEMPLATES = [
 
 
 
+
+
 WSGI_APPLICATION = 'plagiarism_checker.wsgi.application'
 
 
@@ -69,9 +72,10 @@ WSGI_APPLICATION = 'plagiarism_checker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Путь к базе данных
     }
 }
+
 
 
 
@@ -121,7 +125,3 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATABASE_ROUTERS = ['database_router.DatabaseRouter']
-
-
-
-
