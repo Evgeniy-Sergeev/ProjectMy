@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Загрузка работы{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Загрузите вашу работу</h1>
+<form method="POST" class="w-50 mx-auto">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="user_name" class="form-label">Имя:</label>
+        <input type="text" id="user_name" class="form-control" name="user_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="work_number" class="form-label">Номер работы:</label>
+        <input type="text" id="work_number" class="form-control" name="work_number" required>
+    </div>
+    <div class="mb-3">
+        <label for="code" class="form-label">Код программы:</label>
+        <textarea id="code" class="form-control" name="code" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Загрузить работу</button>
+</form>
+{% endblock %}
